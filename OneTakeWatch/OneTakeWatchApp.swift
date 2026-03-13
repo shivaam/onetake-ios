@@ -4,13 +4,21 @@ import OneTakeKit
 @main
 struct OneTakeWatchApp: App {
     @State private var connectivityManager = WatchConnectivityManager.shared
-    @State private var isAuthenticating = false
     @State private var watchAuth = WatchAuthState()
 
     init() {
         WatchConnectivityManager.shared.activate()
 
-        // Try to configure from stored credentials
+        // 1. Try to configure from the Watch bundle's Supabase.plist first
+        if let path = Bundle.main.path(forResource: "Supabase", ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: path),
+           let urlString = dict["SUPABASE_URL"] as? String,
+           let anonKey = dict["SUPABASE_ANON_KEY"] as? String,
+           let url = URL(string: urlString) {
+            SupabaseManager.shared.configure(url: url, anonKey: anonKey)
+        }
+
+        // 2. If WatchConnectivity sent credentials before, those override
         if let urlString = UserDefaults.standard.string(forKey: "supabase_url"),
            let anonKey = UserDefaults.standard.string(forKey: "supabase_key"),
            let url = URL(string: urlString) {
@@ -44,13 +52,7 @@ final class WatchAuthState {
         error = nil
         do {
             // Configure Supabase from plist if not already done
-            if let path = Bundle.main.path(forResource: "Supabase", ofType: "plist"),
-               let dict = NSDictionary(contentsOfFile: path),
-               let urlString = dict["SUPABASE_URL"] as? String,
-               let anonKey = dict["SUPABASE_ANON_KEY"] as? String,
-               let url = URL(string: urlString) {
-                SupabaseManager.shared.configure(url: url, anonKey: anonKey)
-            }
+            configureIfNeeded()
             try await authService.signInWithPassword(email: email, password: password)
             isSignedIn = true
         } catch {
@@ -60,7 +62,20 @@ final class WatchAuthState {
     }
 
     func checkExistingSession() async {
+        // Only check if Supabase is configured (otherwise it would crash)
+        guard SupabaseManager.shared.isConfigured else { return }
         isSignedIn = await authService.isAuthenticated
+    }
+
+    private func configureIfNeeded() {
+        guard !SupabaseManager.shared.isConfigured else { return }
+        if let path = Bundle.main.path(forResource: "Supabase", ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: path),
+           let urlString = dict["SUPABASE_URL"] as? String,
+           let anonKey = dict["SUPABASE_ANON_KEY"] as? String,
+           let url = URL(string: urlString) {
+            SupabaseManager.shared.configure(url: url, anonKey: anonKey)
+        }
     }
 }
 
@@ -76,7 +91,7 @@ struct WatchSignInView: View {
             VStack(spacing: 10) {
                 Image(systemName: "mic.fill")
                     .font(.title2)
-                    .foregroundStyle(.green)
+                    .foregroundStyle(Color.oneTakeGreen)
 
                 Text("OneTake")
                     .font(.headline)
@@ -91,31 +106,39 @@ struct WatchSignInView: View {
                     .textContentType(.password)
                     .font(.caption2)
 
-                Button {
-                    Task { await watchAuth.signIn(email: email, password: password) }
-                } label: {
-                    if watchAuth.isLoading {
-                        ProgressView()
-                    } else {
-                        Text("Sign In")
-                            .fontWeight(.bold)
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.green)
-                .disabled(email.isEmpty || password.isEmpty || watchAuth.isLoading)
-
-                if let error = watchAuth.error {
-                    Text(error)
-                        .font(.caption2)
-                        .foregroundStyle(.red)
-                        .multilineTextAlignment(.center)
-                }
+                signInButton
+                errorText
             }
             .padding(.horizontal, 4)
         }
         .task {
             await watchAuth.checkExistingSession()
+        }
+    }
+
+    private var signInButton: some View {
+        Button {
+            Task { await watchAuth.signIn(email: email, password: password) }
+        } label: {
+            if watchAuth.isLoading {
+                ProgressView()
+            } else {
+                Text("Sign In")
+                    .fontWeight(.bold)
+            }
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(Color.oneTakeGreen)
+        .disabled(email.isEmpty || password.isEmpty || watchAuth.isLoading)
+    }
+
+    @ViewBuilder
+    private var errorText: some View {
+        if let error = watchAuth.error {
+            Text(error)
+                .font(.caption2)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
         }
     }
 }

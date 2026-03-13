@@ -9,6 +9,9 @@ public final class SupabaseManager: @unchecked Sendable {
     private var _client: SupabaseClient?
     private var _url: URL?
 
+    /// Whether `configure()` has been called.
+    public var isConfigured: Bool { _client != nil }
+
     /// The initialized Supabase client. Crashes if accessed before `configure()`.
     public var client: SupabaseClient {
         guard let c = _client else {
