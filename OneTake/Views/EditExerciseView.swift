@@ -123,7 +123,7 @@ struct EditExerciseView: View {
 
             if sets.count > 1 {
                 Button("Delete") {
-                    withAnimation { sets.remove(at: index) }
+                    withAnimation { _ = sets.remove(at: index) }
                 }
                 .font(.caption)
                 .foregroundStyle(.red)
