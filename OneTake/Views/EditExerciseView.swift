@@ -91,14 +91,20 @@ struct EditExerciseView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Back") { dismiss() }
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
-                    Task { await save() }
+                Button("Back") {
+                    dismiss()
                 }
-                .fontWeight(.bold)
-                .foregroundStyle(.green)
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button {
+                    Task { await save() }
+                } label: {
+                    Text("Save")
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.green)
+                }
                 .disabled(isSaving)
             }
         }
