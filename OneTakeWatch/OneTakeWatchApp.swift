@@ -4,6 +4,8 @@ import OneTakeKit
 @main
 struct OneTakeWatchApp: App {
     @State private var connectivityManager = WatchConnectivityManager.shared
+    @State private var isAuthenticating = false
+    @State private var watchAuth = WatchAuthState()
 
     init() {
         WatchConnectivityManager.shared.activate()
@@ -18,35 +20,102 @@ struct OneTakeWatchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if connectivityManager.hasReceivedAuth {
+            if connectivityManager.hasReceivedAuth || watchAuth.isSignedIn {
                 StartView()
             } else {
-                WatchNeedsAuthView()
+                WatchSignInView(watchAuth: watchAuth)
             }
         }
     }
 }
 
-struct WatchNeedsAuthView: View {
-    var body: some View {
-        VStack(spacing: 12) {
-            Spacer()
+// MARK: - Watch Auth State
 
-            Image(systemName: "iphone")
-                .font(.largeTitle)
-                .foregroundStyle(.green.opacity(0.5))
+@Observable
+final class WatchAuthState {
+    var isSignedIn = false
+    var isLoading = false
+    var error: String?
 
-            Text("Open OneTake on iPhone")
-                .font(.callout)
-                .fontWeight(.semibold)
-                .multilineTextAlignment(.center)
+    private let authService = AuthService()
 
-            Text("Sign in to get started")
-                .font(.caption2)
-                .foregroundStyle(.secondary)
-
-            Spacer()
+    func signIn(email: String, password: String) async {
+        isLoading = true
+        error = nil
+        do {
+            // Configure Supabase from plist if not already done
+            if let path = Bundle.main.path(forResource: "Supabase", ofType: "plist"),
+               let dict = NSDictionary(contentsOfFile: path),
+               let urlString = dict["SUPABASE_URL"] as? String,
+               let anonKey = dict["SUPABASE_ANON_KEY"] as? String,
+               let url = URL(string: urlString) {
+                SupabaseManager.shared.configure(url: url, anonKey: anonKey)
+            }
+            try await authService.signInWithPassword(email: email, password: password)
+            isSignedIn = true
+        } catch {
+            self.error = error.localizedDescription
         }
-        .padding()
+        isLoading = false
+    }
+
+    func checkExistingSession() async {
+        isSignedIn = await authService.isAuthenticated
+    }
+}
+
+// MARK: - Watch Sign In View
+
+struct WatchSignInView: View {
+    @Bindable var watchAuth: WatchAuthState
+    @State private var email = ""
+    @State private var password = ""
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 10) {
+                Image(systemName: "mic.fill")
+                    .font(.title2)
+                    .foregroundStyle(.green)
+
+                Text("OneTake")
+                    .font(.headline)
+                    .fontWeight(.heavy)
+
+                TextField("Email", text: $email)
+                    .textContentType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .font(.caption2)
+
+                SecureField("Password", text: $password)
+                    .textContentType(.password)
+                    .font(.caption2)
+
+                Button {
+                    Task { await watchAuth.signIn(email: email, password: password) }
+                } label: {
+                    if watchAuth.isLoading {
+                        ProgressView()
+                    } else {
+                        Text("Sign In")
+                            .fontWeight(.bold)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                .disabled(email.isEmpty || password.isEmpty || watchAuth.isLoading)
+
+                if let error = watchAuth.error {
+                    Text(error)
+                        .font(.caption2)
+                        .foregroundStyle(.red)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .padding(.horizontal, 4)
+        }
+        .task {
+            await watchAuth.checkExistingSession()
+        }
     }
 }

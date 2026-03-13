@@ -17,7 +17,7 @@ public struct VoiceService: VoiceServiceProtocol {
     public func uploadAudio(data: Data, sessionId: String) async throws -> String {
         let token = try await client.auth.session.accessToken
         let url = SupabaseManager.shared.supabaseURL
-            .appendingPathComponent("functions/v1/process-voice")
+            .appendingPathComponent("functions/v1/process-input")
 
         // Build multipart form data
         let boundary = UUID().uuidString
@@ -58,7 +58,7 @@ public struct VoiceService: VoiceServiceProtocol {
     public func uploadText(_ text: String, sessionId: String) async throws -> String {
         let token = try await client.auth.session.accessToken
         let url = SupabaseManager.shared.supabaseURL
-            .appendingPathComponent("functions/v1/process-text")
+            .appendingPathComponent("functions/v1/process-input")
 
         let payload = ["text": text, "sessionId": sessionId]
         let body = try JSONEncoder().encode(payload)

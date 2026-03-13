@@ -181,6 +181,26 @@ final class LiveSessionViewModel {
         }
     }
 
+    // MARK: - Text input
+
+    func sendText(_ text: String) async {
+        guard let sessionId = session?.id, !text.isEmpty else { return }
+        isProcessing = true
+        processingStatus = "Processing..."
+        error = nil
+        do {
+            let inputMessageId = try await voiceService.uploadText(text, sessionId: sessionId)
+            _ = try await voiceService.pollForCompletion(inputMessageId: inputMessageId)
+            isProcessing = false
+            processingStatus = nil
+            await refreshLogs()
+        } catch {
+            isProcessing = false
+            processingStatus = nil
+            self.error = error.localizedDescription
+        }
+    }
+
     // MARK: - Timer
 
     private func startTimer(from startedAt: String) {

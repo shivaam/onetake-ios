@@ -58,6 +58,13 @@ final class SessionDetailViewModel {
         exerciseLogs.reduce(0) { $0 + $1.sets.count }
     }
 
+    var totalVolume: Double {
+        exerciseLogs.flatMap(\.sets).compactMap { set in
+            guard let w = set.w, let r = set.r else { return nil }
+            return w * r
+        }.reduce(0, +)
+    }
+
     private func parseDate(_ dateString: String) -> Date? {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]

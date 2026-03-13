@@ -6,6 +6,8 @@ struct LiveSessionView: View {
     @State private var selectedTab = 0
     @State private var showEndConfirmation = false
     @State private var editingLog: ExerciseLog?
+    @State private var textInput = ""
+    @FocusState private var isTextFieldFocused: Bool
 
     var body: some View {
         VStack(spacing: 0) {
@@ -24,33 +26,50 @@ struct LiveSessionView: View {
 
     // MARK: - Active Session
 
+    @State private var activeDotVisible = true
+
     private var activeSessionContent: some View {
         VStack(spacing: 0) {
             // Header
             HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: 6) {
+                    // SESSION ACTIVE badge
+                    HStack(spacing: 6) {
+                        Circle()
+                            .fill(Color.oneTakeGreen)
+                            .frame(width: 8, height: 8)
+                            .opacity(activeDotVisible ? 1 : 0.3)
+                            .animation(.easeInOut(duration: 1).repeatForever(), value: activeDotVisible)
+                            .onAppear { activeDotVisible.toggle() }
+
+                        Text("SESSION ACTIVE")
+                            .font(.caption2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color.oneTakeGreen)
+                    }
+
                     Text(viewModel.elapsedFormatted)
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.heavy)
-                        .foregroundStyle(.green)
+                        .foregroundStyle(Color.oneTakeGreen)
                         .monospacedDigit()
 
-                    Text("Workout in progress")
+                    Text("\(viewModel.groupedExercises.count) exercises logged")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
 
                 Spacer()
 
-                Button("End") {
+                Button("End Session") {
                     showEndConfirmation = true
                 }
-                .font(.callout)
+                .font(.caption)
                 .fontWeight(.bold)
-                .foregroundStyle(.red)
-                .padding(.horizontal, 16)
+                .foregroundStyle(Color.oneTakeRed)
+                .padding(.horizontal, 14)
                 .padding(.vertical, 8)
-                .background(.red.opacity(0.1), in: Capsule())
+                .background(Color.oneTakeRed.opacity(0.15), in: Capsule())
             }
             .padding()
 
@@ -71,9 +90,8 @@ struct LiveSessionView: View {
 
             Spacer(minLength: 0)
 
-            // Mic button
-            micButton
-                .padding()
+            // Input bar
+            inputBar
         }
         .confirmationDialog("End workout?", isPresented: $showEndConfirmation) {
             Button("End Workout", role: .destructive) {
@@ -93,43 +111,79 @@ struct LiveSessionView: View {
 
     private var feedTab: some View {
         ScrollViewReader { proxy in
-            List {
-                ForEach(viewModel.exerciseLogs) { log in
-                    HStack(spacing: 10) {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundStyle(.green)
-                            .font(.body)
+            ScrollView {
+                LazyVStack(spacing: 8) {
+                    ForEach(viewModel.exerciseLogs) { log in
+                        // Parsed exercise item
+                        HStack(spacing: 10) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundStyle(Color.oneTakeGreen)
+                                .font(.body)
 
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(log.displayName)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                            Text(log.sets.map(\.weightRepsDisplay).joined(separator: "  "))
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .monospacedDigit()
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(log.displayName)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+
+                                Text(formatSetsSummary(log))
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .monospacedDigit()
+                            }
+
+                            Spacer()
+
+                            Button {
+                                editingLog = log
+                            } label: {
+                                Text("Edit >")
+                                    .font(.caption)
+                                    .foregroundStyle(Color.oneTakeGreen)
+                            }
+                            .buttonStyle(.plain)
                         }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 10))
+                        .padding(.horizontal)
+                        .id(log.id)
                     }
-                    .id(log.id)
-                }
 
-                if viewModel.isProcessing {
-                    HStack(spacing: 10) {
-                        ProgressView()
-                        Text(viewModel.processingStatus ?? "Processing...")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                    if viewModel.isProcessing {
+                        HStack(spacing: 10) {
+                            ProgressView()
+                            Text(viewModel.processingStatus ?? "Processing...")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding()
+                        .id("processing")
                     }
-                    .id("processing")
                 }
+                .padding(.vertical, 8)
             }
-            .listStyle(.plain)
             .onChange(of: viewModel.exerciseLogs.count) {
                 if let last = viewModel.exerciseLogs.last {
-                    proxy.scrollTo(last.id, anchor: .bottom)
+                    withAnimation {
+                        proxy.scrollTo(last.id, anchor: .bottom)
+                    }
                 }
             }
         }
+    }
+
+    private func formatSetsSummary(_ log: ExerciseLog) -> String {
+        let setType = log.exercise?.setType
+        return log.sets.map { set in
+            switch setType {
+            case .bodyweightReps:
+                return "BW x \(set.r.map { String(format: "%.0f", $0) } ?? "?")"
+            case .durationDistance:
+                return set.t.map { "\(Int($0))s" } ?? "?"
+            default:
+                return set.weightRepsDisplay
+            }
+        }.joined(separator: " · ")
     }
 
     // MARK: - Summary Tab
@@ -144,11 +198,19 @@ struct LiveSessionView: View {
             } else {
                 ForEach(viewModel.groupedExercises) { group in
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(group.name)
-                            .font(.headline)
+                        HStack {
+                            Text(group.name)
+                                .font(.headline)
 
-                        // Sets as pills
-                        HStack(spacing: 6) {
+                            Spacer()
+
+                            Text("tap to edit")
+                                .font(.caption2)
+                                .foregroundStyle(.tertiary)
+                        }
+
+                        // Set pills
+                        FlowLayout(spacing: 6) {
                             ForEach(Array(group.allSets.enumerated()), id: \.offset) { _, setData in
                                 Text(setData.weightRepsDisplay)
                                     .font(.caption)
@@ -172,41 +234,84 @@ struct LiveSessionView: View {
         .listStyle(.plain)
     }
 
-    // MARK: - Mic Button
+    // MARK: - Input Bar (text + mic)
 
-    private var micButton: some View {
-        VStack(spacing: 8) {
-            Button {
-                viewModel.toggleRecording()
-            } label: {
-                ZStack {
-                    Circle()
-                        .fill(
-                            viewModel.isProcessing ? Color.orange :
-                            viewModel.isRecording ? Color.red :
-                            Color.green
-                        )
-                        .frame(width: 64, height: 64)
-                        .shadow(color: .green.opacity(0.3), radius: 15)
-
-                    if viewModel.isProcessing {
-                        ProgressView()
-                            .tint(.white)
-                    } else {
-                        Image(systemName: viewModel.isRecording ? "stop.fill" : "mic.fill")
-                            .font(.title2)
-                            .foregroundStyle(.white)
-                    }
-                }
-            }
-            .disabled(viewModel.isProcessing)
+    private var inputBar: some View {
+        VStack(spacing: 0) {
+            Divider()
 
             if let error = viewModel.error {
                 Text(error)
                     .font(.caption)
                     .foregroundStyle(.red)
+                    .padding(.horizontal)
+                    .padding(.top, 4)
             }
+
+            HStack(spacing: 12) {
+                // Text field
+                TextField("Type or tap mic...", text: $textInput)
+                    .font(.callout)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 20))
+                    .focused($isTextFieldFocused)
+                    .submitLabel(.send)
+                    .onSubmit {
+                        sendText()
+                    }
+
+                // Mic / Send button
+                Button {
+                    if !textInput.isEmpty {
+                        sendText()
+                    } else {
+                        viewModel.toggleRecording()
+                    }
+                } label: {
+                    ZStack {
+                        Circle()
+                            .fill(buttonColor)
+                            .frame(width: 44, height: 44)
+
+                        if viewModel.isProcessing {
+                            ProgressView()
+                                .tint(.white)
+                        } else {
+                            Image(systemName: buttonIcon)
+                                .font(.body)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.white)
+                        }
+                    }
+                }
+                .disabled(viewModel.isProcessing)
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 10)
         }
+        .background(.ultraThinMaterial)
+    }
+
+    private var buttonColor: Color {
+        if !textInput.isEmpty { return .oneTakeGreen }
+        if viewModel.isProcessing { return .oneTakeOrange }
+        if viewModel.isRecording { return .oneTakeRed }
+        return .oneTakeGreen
+    }
+
+    private var buttonIcon: String {
+        if !textInput.isEmpty { return "arrow.up" }
+        if viewModel.isRecording { return "stop.fill" }
+        return "mic.fill"
+    }
+
+    private func sendText() {
+        let text = textInput.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !text.isEmpty else { return }
+        textInput = ""
+        isTextFieldFocused = false
+        Task { await viewModel.sendText(text) }
     }
 
     // MARK: - No Session
@@ -217,7 +322,7 @@ struct LiveSessionView: View {
 
             Image(systemName: "figure.run")
                 .font(.system(size: 48))
-                .foregroundStyle(.green.opacity(0.5))
+                .foregroundStyle(Color.oneTakeGreen.opacity(0.5))
 
             Text("Ready to work out?")
                 .font(.title2)
@@ -233,7 +338,7 @@ struct LiveSessionView: View {
                     .padding(.vertical, 14)
             }
             .buttonStyle(.borderedProminent)
-            .tint(.green)
+            .tint(.oneTakeGreen)
             .foregroundStyle(.black)
 
             Spacer()
@@ -248,7 +353,7 @@ struct LiveSessionView: View {
 
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 56))
-                .foregroundStyle(.green)
+                .foregroundStyle(Color.oneTakeGreen)
 
             Text("Workout Complete")
                 .font(.title2)
@@ -292,5 +397,47 @@ struct LiveSessionView: View {
             .fontWeight(.bold)
             .padding(.bottom, 32)
         }
+    }
+}
+
+// MARK: - Flow Layout (for set pills)
+
+struct FlowLayout: Layout {
+    var spacing: CGFloat = 6
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let result = computeLayout(proposal: proposal, subviews: subviews)
+        return result.size
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        let result = computeLayout(proposal: proposal, subviews: subviews)
+        for (index, position) in result.positions.enumerated() {
+            subviews[index].place(at: CGPoint(x: bounds.minX + position.x, y: bounds.minY + position.y), proposal: .unspecified)
+        }
+    }
+
+    private func computeLayout(proposal: ProposedViewSize, subviews: Subviews) -> (size: CGSize, positions: [CGPoint]) {
+        let maxWidth = proposal.width ?? .infinity
+        var positions: [CGPoint] = []
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var rowHeight: CGFloat = 0
+        var totalHeight: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x + size.width > maxWidth && x > 0 {
+                x = 0
+                y += rowHeight + spacing
+                rowHeight = 0
+            }
+            positions.append(CGPoint(x: x, y: y))
+            rowHeight = max(rowHeight, size.height)
+            x += size.width + spacing
+            totalHeight = y + rowHeight
+        }
+
+        return (CGSize(width: maxWidth, height: totalHeight), positions)
     }
 }

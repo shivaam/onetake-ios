@@ -9,6 +9,7 @@ final class WatchRecorderViewModel {
     var isProcessing = false
     var processingStatus: String?
     var error: String?
+    var lastTranscript: String?
 
     private var audioRecorder: AVAudioRecorder?
     private var recordingURL: URL?
@@ -90,11 +91,12 @@ final class WatchRecorderViewModel {
                 let inputMessageId = try await voiceService.uploadAudio(data: data, sessionId: sessionId)
                 await MainActor.run { self.processingStatus = "Processing..." }
 
-                _ = try await voiceService.pollForCompletion(inputMessageId: inputMessageId)
+                let result = try await voiceService.pollForCompletion(inputMessageId: inputMessageId)
 
                 await MainActor.run {
                     self.isProcessing = false
                     self.processingStatus = nil
+                    self.lastTranscript = result.content
                     onComplete()
                 }
             } catch {

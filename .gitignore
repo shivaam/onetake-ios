@@ -26,6 +26,8 @@ Packages/
 # Secrets - DO NOT commit real credentials
 Config/Supabase.plist
 OneTake/Config/Supabase.plist
+OneTakeWatch Watch App/Supabase.plist
+**/Supabase.plist
 
 # macOS
 .DS_Store

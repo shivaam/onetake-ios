@@ -16,7 +16,7 @@ struct SessionView: View {
                 Text(viewModel.elapsedFormatted)
                     .font(.title2)
                     .fontWeight(.heavy)
-                    .foregroundStyle(.green)
+                    .foregroundStyle(Color.oneTakeGreen)
                     .monospacedDigit()
 
                 Spacer()
@@ -49,9 +49,13 @@ struct SessionView: View {
             if selectedTab == 0 {
                 FeedTabView(logs: viewModel.exerciseLogs, isProcessing: recorder.isProcessing, processingStatus: recorder.processingStatus)
             } else {
-                SummaryTabView(groups: viewModel.groupedExercises, onEditLog: { log in
-                    editingLog = log
-                })
+                SummaryTabView(
+                    groups: viewModel.groupedExercises,
+                    exerciseCount: viewModel.groupedExercises.count,
+                    setCount: viewModel.totalSets,
+                    elapsed: viewModel.elapsedFormatted,
+                    onEditLog: { log in editingLog = log }
+                )
             }
 
             // Mic button
@@ -72,9 +76,9 @@ struct SessionView: View {
             } label: {
                 ZStack {
                     Circle()
-                        .fill(recorder.isProcessing ? Color.orange : Color.green)
+                        .fill(recorder.isProcessing ? Color.oneTakeOrange : Color.oneTakeGreen)
                         .frame(width: 38, height: 38)
-                        .shadow(color: .green.opacity(0.3), radius: 10)
+                        .shadow(color: Color.oneTakeGreen.opacity(0.3), radius: 10)
 
                     if recorder.isProcessing {
                         ProgressView()
@@ -97,7 +101,7 @@ struct SessionView: View {
             }
         }
         .fullScreenCover(isPresented: $showRecording) {
-            RecordingOverlayView(recorder: recorder, sessionId: viewModel.session?.id ?? "") {
+            RecordingOverlayView(recorder: recorder, sessionId: viewModel.session?.id ?? "", elapsedFormatted: viewModel.elapsedFormatted) {
                 Task { await viewModel.refreshLogs() }
                 showRecording = false
             }
@@ -134,11 +138,11 @@ private struct TabButton: View {
             VStack(spacing: 2) {
                 Text(title)
                     .font(.system(size: 9, weight: .semibold))
-                    .foregroundStyle(isSelected ? .green : .secondary)
+                    .foregroundStyle(isSelected ? Color.oneTakeGreen : .secondary)
                     .tracking(0.5)
 
                 Rectangle()
-                    .fill(isSelected ? .green : .clear)
+                    .fill(isSelected ? Color.oneTakeGreen : .clear)
                     .frame(height: 2)
             }
         }
@@ -162,7 +166,7 @@ private struct FeedTabView: View {
                         HStack(spacing: 4) {
                             Image(systemName: "checkmark.circle.fill")
                                 .font(.system(size: 8))
-                                .foregroundStyle(.green)
+                                .foregroundStyle(Color.oneTakeGreen)
 
                             VStack(alignment: .leading, spacing: 1) {
                                 Text(log.displayName)
@@ -208,6 +212,9 @@ private struct FeedTabView: View {
 
 private struct SummaryTabView: View {
     let groups: [GroupedExercise]
+    let exerciseCount: Int
+    let setCount: Int
+    let elapsed: String
     let onEditLog: (ExerciseLog) -> Void
 
     var body: some View {
@@ -230,15 +237,21 @@ private struct SummaryTabView: View {
                                     .foregroundStyle(.secondary)
                             }
 
-                            // Set pills
+                            // Set pills with green border
                             FlowLayout(spacing: 4) {
                                 ForEach(Array(group.allSets.enumerated()), id: \.offset) { _, set in
                                     Text(set.weightRepsDisplay)
                                         .font(.system(size: 9, design: .monospaced))
                                         .padding(.horizontal, 7)
                                         .padding(.vertical, 3)
-                                        .background(Color.gray.opacity(0.3), in: RoundedRectangle(cornerRadius: 6))
-                                        .foregroundStyle(.secondary)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 6)
+                                                .fill(Color.oneTakeGreen.opacity(0.1))
+                                        )
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 6)
+                                                .stroke(Color.oneTakeGreen.opacity(0.3), lineWidth: 1)
+                                        )
                                 }
                             }
                         }
@@ -251,6 +264,34 @@ private struct SummaryTabView: View {
                     }
                 }
                 .padding(.horizontal, 2)
+
+                // Summary footer
+                HStack(spacing: 12) {
+                    VStack(spacing: 1) {
+                        Text("\(exerciseCount)")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("EXERCISES")
+                            .font(.system(size: 6))
+                            .foregroundStyle(.secondary)
+                    }
+                    VStack(spacing: 1) {
+                        Text("\(setCount)")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("SETS")
+                            .font(.system(size: 6))
+                            .foregroundStyle(.secondary)
+                    }
+                    VStack(spacing: 1) {
+                        Text(elapsed)
+                            .font(.system(size: 12, weight: .bold, design: .monospaced))
+                            .foregroundStyle(Color.oneTakeGreen)
+                        Text("TIME")
+                            .font(.system(size: 6))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .padding(.top, 8)
+                .frame(maxWidth: .infinity)
             }
         }
     }

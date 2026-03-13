@@ -6,60 +6,93 @@ struct DoneView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        VStack(spacing: 12) {
-            Spacer()
+        ScrollView {
+            VStack(spacing: 10) {
+                // Checkmark
+                ZStack {
+                    Circle()
+                        .fill(Color.oneTakeGreen.opacity(0.15))
+                        .frame(width: 40, height: 40)
 
-            Image(systemName: "checkmark.circle.fill")
-                .font(.largeTitle)
-                .foregroundStyle(.green)
+                    Image(systemName: "checkmark")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.oneTakeGreen)
+                }
 
-            Text("Workout Complete")
-                .font(.callout)
-                .fontWeight(.bold)
-
-            // Stats
-            VStack(spacing: 6) {
-                StatRow(label: "Duration", value: viewModel.elapsedFormatted)
-                StatRow(label: "Exercises", value: "\(viewModel.groupedExercises.count)")
-                StatRow(label: "Sets", value: "\(viewModel.totalSets)")
-            }
-            .padding(.vertical, 8)
-
-            Spacer()
-
-            Button {
-                viewModel.reset()
-                // Pop to root
-                dismiss()
-            } label: {
-                Text("Done")
+                Text("Session Saved")
                     .font(.callout)
                     .fontWeight(.bold)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
+                    .foregroundStyle(Color.oneTakeGreen)
+
+                // Stats row
+                HStack(spacing: 12) {
+                    VStack(spacing: 1) {
+                        Text(viewModel.elapsedFormatted)
+                            .font(.system(size: 11, weight: .bold, design: .monospaced))
+                            .foregroundStyle(Color.oneTakeGreen)
+                        Text("DURATION")
+                            .font(.system(size: 6))
+                            .foregroundStyle(.secondary)
+                    }
+                    VStack(spacing: 1) {
+                        Text("\(viewModel.groupedExercises.count)")
+                            .font(.system(size: 11, weight: .bold))
+                        Text("EXERCISES")
+                            .font(.system(size: 6))
+                            .foregroundStyle(.secondary)
+                    }
+                    VStack(spacing: 1) {
+                        Text("\(viewModel.totalSets)")
+                            .font(.system(size: 11, weight: .bold))
+                        Text("SETS")
+                            .font(.system(size: 6))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                // Exercise summary list
+                if !viewModel.groupedExercises.isEmpty {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("LOGGED")
+                            .font(.system(size: 7))
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity)
+
+                        ForEach(viewModel.groupedExercises) { group in
+                            HStack(spacing: 4) {
+                                Text(group.name)
+                                    .font(.system(size: 9, weight: .semibold))
+                                    .frame(maxWidth: 70, alignment: .leading)
+                                    .lineLimit(1)
+
+                                Text(group.allSets.map(\.weightRepsDisplay).joined(separator: ", "))
+                                    .font(.system(size: 8, design: .monospaced))
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                            }
+                        }
+                    }
+                    .padding(8)
+                    .background(Color.oneTakeSurface2, in: RoundedRectangle(cornerRadius: 8))
+                }
+
+                // Done button
+                Button {
+                    viewModel.reset()
+                    dismiss()
+                } label: {
+                    Text("Done")
+                        .font(.callout)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.oneTakeGreen)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.green)
+            .padding(.horizontal, 4)
         }
-        .padding()
         .navigationBarBackButtonHidden(true)
-    }
-}
-
-private struct StatRow: View {
-    let label: String
-    let value: String
-
-    var body: some View {
-        HStack {
-            Text(label)
-                .font(.caption2)
-                .foregroundStyle(.secondary)
-            Spacer()
-            Text(value)
-                .font(.caption)
-                .fontWeight(.semibold)
-                .monospacedDigit()
-        }
     }
 }
