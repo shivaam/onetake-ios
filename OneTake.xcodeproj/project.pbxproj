@@ -1,0 +1,1433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5F70D7E2F63AD0B00038336 /* OneTakeWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D5F70D7D2F63AD0B00038336 /* OneTakeWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D5F70DD92F63AFDD00038336 /* OneTakeKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5F70DD82F63AFDD00038336 /* OneTakeKit */; };
+		D5F70DE52F63B56000038336 /* OneTakeKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5F70DE42F63B56000038336 /* OneTakeKit */; };
+		D5F70DE72F63B58C00038336 /* OneTakeKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5F70DE62F63B58C00038336 /* OneTakeKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5F70D232F63AA8100038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D142F63AA8100038336;
+			remoteInfo = OneTake;
+		};
+		D5F70D2D2F63AA8100038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D142F63AA8100038336;
+			remoteInfo = OneTake;
+		};
+		D5F70D682F63AD0B00038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D5A2F63AD0A00038336;
+			remoteInfo = OneTakeWatch;
+		};
+		D5F70D722F63AD0B00038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D5A2F63AD0A00038336;
+			remoteInfo = OneTakeWatch;
+		};
+		D5F70D7F2F63AD0B00038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D7C2F63AD0B00038336;
+			remoteInfo = "OneTakeWatch Watch App";
+		};
+		D5F70D8D2F63AD0C00038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D7C2F63AD0B00038336;
+			remoteInfo = "OneTakeWatch Watch App";
+		};
+		D5F70D972F63AD0C00038336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5F70D0D2F63AA8100038336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F70D7C2F63AD0B00038336;
+			remoteInfo = "OneTakeWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D5F70DA12F63AD0C00038336 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D5F70D7E2F63AD0B00038336 /* OneTakeWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D5F70D152F63AA8100038336 /* OneTake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D222F63AA8100038336 /* OneTakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D2C2F63AA8100038336 /* OneTakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D5B2F63AD0A00038336 /* OneTakeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTakeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D672F63AD0B00038336 /* OneTakeWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTakeWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D712F63AD0B00038336 /* OneTakeWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneTakeWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D7D2F63AD0B00038336 /* OneTakeWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OneTakeWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D8C2F63AD0C00038336 /* OneTakeWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OneTakeWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F70D962F63AD0C00038336 /* OneTakeWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OneTakeWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D5F70DDB2F63B0C100038336 /* Exceptions for "OneTakeWatch" folder in "OneTakeWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				OneTakeWatchApp.swift,
+				ViewModels/WatchRecorderViewModel.swift,
+				ViewModels/WatchSessionViewModel.swift,
+				Views/DoneView.swift,
+				Views/EditSetView.swift,
+				Views/RecordingOverlayView.swift,
+				Views/SessionView.swift,
+				Views/StartView.swift,
+			);
+			target = D5F70D7C2F63AD0B00038336 /* OneTakeWatch Watch App */;
+		};
+		D5F70DDC2F63B0C200038336 /* Exceptions for "OneTakeWatch" folder in "OneTakeWatch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				OneTakeWatchApp.swift,
+				ViewModels/WatchRecorderViewModel.swift,
+				ViewModels/WatchSessionViewModel.swift,
+				Views/DoneView.swift,
+				Views/EditSetView.swift,
+				Views/RecordingOverlayView.swift,
+				Views/SessionView.swift,
+				Views/StartView.swift,
+			);
+			target = D5F70D5A2F63AD0A00038336 /* OneTakeWatch */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D5F70D172F63AA8100038336 /* OneTake */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OneTake;
+			sourceTree = "<group>";
+		};
+		D5F70D252F63AA8100038336 /* OneTakeTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OneTakeTests;
+			sourceTree = "<group>";
+		};
+		D5F70D2F2F63AA8100038336 /* OneTakeUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OneTakeUITests;
+			sourceTree = "<group>";
+		};
+		D5F70D5C2F63AD0A00038336 /* OneTakeWatch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D5F70DDC2F63B0C200038336 /* Exceptions for "OneTakeWatch" folder in "OneTakeWatch" target */,
+				D5F70DDB2F63B0C100038336 /* Exceptions for "OneTakeWatch" folder in "OneTakeWatch Watch App" target */,
+			);
+			path = OneTakeWatch;
+			sourceTree = "<group>";
+		};
+		D5F70D6A2F63AD0B00038336 /* OneTakeWatchTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OneTakeWatchTests;
+			sourceTree = "<group>";
+		};
+		D5F70D742F63AD0B00038336 /* OneTakeWatchUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OneTakeWatchUITests;
+			sourceTree = "<group>";
+		};
+		D5F70D812F63AD0B00038336 /* OneTakeWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "OneTakeWatch Watch App";
+			sourceTree = "<group>";
+		};
+		D5F70D8F2F63AD0C00038336 /* OneTakeWatch Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "OneTakeWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		D5F70D992F63AD0C00038336 /* OneTakeWatch Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "OneTakeWatch Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5F70D122F63AA8100038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F70DE72F63B58C00038336 /* OneTakeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D1F2F63AA8100038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D292F63AA8100038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D582F63AD0A00038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F70DE52F63B56000038336 /* OneTakeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D642F63AD0B00038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D6E2F63AD0B00038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D7A2F63AD0B00038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F70DD92F63AFDD00038336 /* OneTakeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D892F63AD0C00038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D932F63AD0C00038336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5F70D0C2F63AA8100038336 = {
+			isa = PBXGroup;
+			children = (
+				D5F70D172F63AA8100038336 /* OneTake */,
+				D5F70D252F63AA8100038336 /* OneTakeTests */,
+				D5F70D2F2F63AA8100038336 /* OneTakeUITests */,
+				D5F70D5C2F63AD0A00038336 /* OneTakeWatch */,
+				D5F70D6A2F63AD0B00038336 /* OneTakeWatchTests */,
+				D5F70D742F63AD0B00038336 /* OneTakeWatchUITests */,
+				D5F70D812F63AD0B00038336 /* OneTakeWatch Watch App */,
+				D5F70D8F2F63AD0C00038336 /* OneTakeWatch Watch AppTests */,
+				D5F70D992F63AD0C00038336 /* OneTakeWatch Watch AppUITests */,
+				D5F70DD72F63AFDD00038336 /* Frameworks */,
+				D5F70D162F63AA8100038336 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5F70D162F63AA8100038336 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5F70D152F63AA8100038336 /* OneTake.app */,
+				D5F70D222F63AA8100038336 /* OneTakeTests.xctest */,
+				D5F70D2C2F63AA8100038336 /* OneTakeUITests.xctest */,
+				D5F70D5B2F63AD0A00038336 /* OneTakeWatch.app */,
+				D5F70D672F63AD0B00038336 /* OneTakeWatchTests.xctest */,
+				D5F70D712F63AD0B00038336 /* OneTakeWatchUITests.xctest */,
+				D5F70D7D2F63AD0B00038336 /* OneTakeWatch Watch App.app */,
+				D5F70D8C2F63AD0C00038336 /* OneTakeWatch Watch AppTests.xctest */,
+				D5F70D962F63AD0C00038336 /* OneTakeWatch Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5F70DD72F63AFDD00038336 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5F70D142F63AA8100038336 /* OneTake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70D362F63AA8100038336 /* Build configuration list for PBXNativeTarget "OneTake" */;
+			buildPhases = (
+				D5F70D112F63AA8100038336 /* Sources */,
+				D5F70D122F63AA8100038336 /* Frameworks */,
+				D5F70D132F63AA8100038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D172F63AA8100038336 /* OneTake */,
+			);
+			name = OneTake;
+			packageProductDependencies = (
+				D5F70DE62F63B58C00038336 /* OneTakeKit */,
+			);
+			productName = OneTake;
+			productReference = D5F70D152F63AA8100038336 /* OneTake.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5F70D212F63AA8100038336 /* OneTakeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70D392F63AA8100038336 /* Build configuration list for PBXNativeTarget "OneTakeTests" */;
+			buildPhases = (
+				D5F70D1E2F63AA8100038336 /* Sources */,
+				D5F70D1F2F63AA8100038336 /* Frameworks */,
+				D5F70D202F63AA8100038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D242F63AA8100038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D252F63AA8100038336 /* OneTakeTests */,
+			);
+			name = OneTakeTests;
+			packageProductDependencies = (
+			);
+			productName = OneTakeTests;
+			productReference = D5F70D222F63AA8100038336 /* OneTakeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5F70D2B2F63AA8100038336 /* OneTakeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70D3C2F63AA8100038336 /* Build configuration list for PBXNativeTarget "OneTakeUITests" */;
+			buildPhases = (
+				D5F70D282F63AA8100038336 /* Sources */,
+				D5F70D292F63AA8100038336 /* Frameworks */,
+				D5F70D2A2F63AA8100038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D2E2F63AA8100038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D2F2F63AA8100038336 /* OneTakeUITests */,
+			);
+			name = OneTakeUITests;
+			packageProductDependencies = (
+			);
+			productName = OneTakeUITests;
+			productReference = D5F70D2C2F63AA8100038336 /* OneTakeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D5F70D5A2F63AD0A00038336 /* OneTakeWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70DA22F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch" */;
+			buildPhases = (
+				D5F70D572F63AD0A00038336 /* Sources */,
+				D5F70D582F63AD0A00038336 /* Frameworks */,
+				D5F70D592F63AD0A00038336 /* Resources */,
+				D5F70DA12F63AD0C00038336 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D802F63AD0B00038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D5C2F63AD0A00038336 /* OneTakeWatch */,
+			);
+			name = OneTakeWatch;
+			packageProductDependencies = (
+				D5F70DE42F63B56000038336 /* OneTakeKit */,
+			);
+			productName = OneTakeWatch;
+			productReference = D5F70D5B2F63AD0A00038336 /* OneTakeWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5F70D662F63AD0B00038336 /* OneTakeWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70DA52F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatchTests" */;
+			buildPhases = (
+				D5F70D632F63AD0B00038336 /* Sources */,
+				D5F70D642F63AD0B00038336 /* Frameworks */,
+				D5F70D652F63AD0B00038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D692F63AD0B00038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D6A2F63AD0B00038336 /* OneTakeWatchTests */,
+			);
+			name = OneTakeWatchTests;
+			packageProductDependencies = (
+			);
+			productName = OneTakeWatchTests;
+			productReference = D5F70D672F63AD0B00038336 /* OneTakeWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5F70D702F63AD0B00038336 /* OneTakeWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70DA82F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatchUITests" */;
+			buildPhases = (
+				D5F70D6D2F63AD0B00038336 /* Sources */,
+				D5F70D6E2F63AD0B00038336 /* Frameworks */,
+				D5F70D6F2F63AD0B00038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D732F63AD0B00038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D742F63AD0B00038336 /* OneTakeWatchUITests */,
+			);
+			name = OneTakeWatchUITests;
+			packageProductDependencies = (
+			);
+			productName = OneTakeWatchUITests;
+			productReference = D5F70D712F63AD0B00038336 /* OneTakeWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D5F70D7C2F63AD0B00038336 /* OneTakeWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70D9E2F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch Watch App" */;
+			buildPhases = (
+				D5F70D792F63AD0B00038336 /* Sources */,
+				D5F70D7A2F63AD0B00038336 /* Frameworks */,
+				D5F70D7B2F63AD0B00038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D812F63AD0B00038336 /* OneTakeWatch Watch App */,
+			);
+			name = "OneTakeWatch Watch App";
+			packageProductDependencies = (
+				D5F70DD82F63AFDD00038336 /* OneTakeKit */,
+			);
+			productName = "OneTakeWatch Watch App";
+			productReference = D5F70D7D2F63AD0B00038336 /* OneTakeWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5F70D8B2F63AD0C00038336 /* OneTakeWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70DAB2F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch Watch AppTests" */;
+			buildPhases = (
+				D5F70D882F63AD0C00038336 /* Sources */,
+				D5F70D892F63AD0C00038336 /* Frameworks */,
+				D5F70D8A2F63AD0C00038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D8E2F63AD0C00038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D8F2F63AD0C00038336 /* OneTakeWatch Watch AppTests */,
+			);
+			name = "OneTakeWatch Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "OneTakeWatch Watch AppTests";
+			productReference = D5F70D8C2F63AD0C00038336 /* OneTakeWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5F70D952F63AD0C00038336 /* OneTakeWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F70DAE2F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch Watch AppUITests" */;
+			buildPhases = (
+				D5F70D922F63AD0C00038336 /* Sources */,
+				D5F70D932F63AD0C00038336 /* Frameworks */,
+				D5F70D942F63AD0C00038336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F70D982F63AD0C00038336 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D5F70D992F63AD0C00038336 /* OneTakeWatch Watch AppUITests */,
+			);
+			name = "OneTakeWatch Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "OneTakeWatch Watch AppUITests";
+			productReference = D5F70D962F63AD0C00038336 /* OneTakeWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5F70D0D2F63AA8100038336 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					D5F70D142F63AA8100038336 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					D5F70D212F63AA8100038336 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = D5F70D142F63AA8100038336;
+					};
+					D5F70D2B2F63AA8100038336 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = D5F70D142F63AA8100038336;
+					};
+					D5F70D5A2F63AD0A00038336 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					D5F70D662F63AD0B00038336 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = D5F70D5A2F63AD0A00038336;
+					};
+					D5F70D702F63AD0B00038336 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = D5F70D5A2F63AD0A00038336;
+					};
+					D5F70D7C2F63AD0B00038336 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					D5F70D8B2F63AD0C00038336 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = D5F70D7C2F63AD0B00038336;
+					};
+					D5F70D952F63AD0C00038336 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = D5F70D7C2F63AD0B00038336;
+					};
+				};
+			};
+			buildConfigurationList = D5F70D102F63AA8100038336 /* Build configuration list for PBXProject "OneTake" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5F70D0C2F63AA8100038336;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D5F70D532F63AB3700038336 /* XCLocalSwiftPackageReference "OneTakeKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D5F70D162F63AA8100038336 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5F70D142F63AA8100038336 /* OneTake */,
+				D5F70D212F63AA8100038336 /* OneTakeTests */,
+				D5F70D2B2F63AA8100038336 /* OneTakeUITests */,
+				D5F70D5A2F63AD0A00038336 /* OneTakeWatch */,
+				D5F70D662F63AD0B00038336 /* OneTakeWatchTests */,
+				D5F70D702F63AD0B00038336 /* OneTakeWatchUITests */,
+				D5F70D7C2F63AD0B00038336 /* OneTakeWatch Watch App */,
+				D5F70D8B2F63AD0C00038336 /* OneTakeWatch Watch AppTests */,
+				D5F70D952F63AD0C00038336 /* OneTakeWatch Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5F70D132F63AA8100038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D202F63AA8100038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D2A2F63AA8100038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D592F63AD0A00038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D652F63AD0B00038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D6F2F63AD0B00038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D7B2F63AD0B00038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D8A2F63AD0C00038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D942F63AD0C00038336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5F70D112F63AA8100038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D1E2F63AA8100038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D282F63AA8100038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D572F63AD0A00038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D632F63AD0B00038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D6D2F63AD0B00038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D792F63AD0B00038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D882F63AD0C00038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F70D922F63AD0C00038336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5F70D242F63AA8100038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D142F63AA8100038336 /* OneTake */;
+			targetProxy = D5F70D232F63AA8100038336 /* PBXContainerItemProxy */;
+		};
+		D5F70D2E2F63AA8100038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D142F63AA8100038336 /* OneTake */;
+			targetProxy = D5F70D2D2F63AA8100038336 /* PBXContainerItemProxy */;
+		};
+		D5F70D692F63AD0B00038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D5A2F63AD0A00038336 /* OneTakeWatch */;
+			targetProxy = D5F70D682F63AD0B00038336 /* PBXContainerItemProxy */;
+		};
+		D5F70D732F63AD0B00038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D5A2F63AD0A00038336 /* OneTakeWatch */;
+			targetProxy = D5F70D722F63AD0B00038336 /* PBXContainerItemProxy */;
+		};
+		D5F70D802F63AD0B00038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D7C2F63AD0B00038336 /* OneTakeWatch Watch App */;
+			targetProxy = D5F70D7F2F63AD0B00038336 /* PBXContainerItemProxy */;
+		};
+		D5F70D8E2F63AD0C00038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D7C2F63AD0B00038336 /* OneTakeWatch Watch App */;
+			targetProxy = D5F70D8D2F63AD0C00038336 /* PBXContainerItemProxy */;
+		};
+		D5F70D982F63AD0C00038336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F70D7C2F63AD0B00038336 /* OneTakeWatch Watch App */;
+			targetProxy = D5F70D972F63AD0C00038336 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D5F70D342F63AA8100038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5F70D352F63AA8100038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5F70D372F63AA8100038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5F70D382F63AA8100038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5F70D3A2F63AA8100038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneTake.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OneTake";
+			};
+			name = Debug;
+		};
+		D5F70D3B2F63AA8100038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneTake.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OneTake";
+			};
+			name = Release;
+		};
+		D5F70D3D2F63AA8100038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OneTake;
+			};
+			name = Debug;
+		};
+		D5F70D3E2F63AA8100038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OneTake;
+			};
+			name = Release;
+		};
+		D5F70D9F2F63AD0C00038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OneTakeWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riky.OneTakeWatch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		D5F70DA02F63AD0C00038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OneTakeWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riky.OneTakeWatch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		D5F70DA32F63AD0C00038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OneTakeWatch;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5F70DA42F63AD0C00038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OneTakeWatch;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5F70DA62F63AD0C00038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneTakeWatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OneTakeWatch";
+			};
+			name = Debug;
+		};
+		D5F70DA72F63AD0C00038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneTakeWatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OneTakeWatch";
+			};
+			name = Release;
+		};
+		D5F70DA92F63AD0C00038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OneTakeWatch;
+			};
+			name = Debug;
+		};
+		D5F70DAA2F63AD0C00038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riky.OneTakeWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OneTakeWatch;
+			};
+			name = Release;
+		};
+		D5F70DAC2F63AD0C00038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riky.OneTakeWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneTakeWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OneTakeWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		D5F70DAD2F63AD0C00038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riky.OneTakeWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneTakeWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OneTakeWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		D5F70DAF2F63AD0C00038336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riky.OneTakeWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "OneTakeWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		D5F70DB02F63AD0C00038336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2QXD77X57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riky.OneTakeWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "OneTakeWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5F70D102F63AA8100038336 /* Build configuration list for PBXProject "OneTake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70D342F63AA8100038336 /* Debug */,
+				D5F70D352F63AA8100038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70D362F63AA8100038336 /* Build configuration list for PBXNativeTarget "OneTake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70D372F63AA8100038336 /* Debug */,
+				D5F70D382F63AA8100038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70D392F63AA8100038336 /* Build configuration list for PBXNativeTarget "OneTakeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70D3A2F63AA8100038336 /* Debug */,
+				D5F70D3B2F63AA8100038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70D3C2F63AA8100038336 /* Build configuration list for PBXNativeTarget "OneTakeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70D3D2F63AA8100038336 /* Debug */,
+				D5F70D3E2F63AA8100038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70D9E2F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70D9F2F63AD0C00038336 /* Debug */,
+				D5F70DA02F63AD0C00038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70DA22F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70DA32F63AD0C00038336 /* Debug */,
+				D5F70DA42F63AD0C00038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70DA52F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70DA62F63AD0C00038336 /* Debug */,
+				D5F70DA72F63AD0C00038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70DA82F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70DA92F63AD0C00038336 /* Debug */,
+				D5F70DAA2F63AD0C00038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70DAB2F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70DAC2F63AD0C00038336 /* Debug */,
+				D5F70DAD2F63AD0C00038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F70DAE2F63AD0C00038336 /* Build configuration list for PBXNativeTarget "OneTakeWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F70DAF2F63AD0C00038336 /* Debug */,
+				D5F70DB02F63AD0C00038336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D5F70D532F63AB3700038336 /* XCLocalSwiftPackageReference "OneTakeKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = OneTakeKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5F70DD82F63AFDD00038336 /* OneTakeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F70D532F63AB3700038336 /* XCLocalSwiftPackageReference "OneTakeKit" */;
+			productName = OneTakeKit;
+		};
+		D5F70DE42F63B56000038336 /* OneTakeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F70D532F63AB3700038336 /* XCLocalSwiftPackageReference "OneTakeKit" */;
+			productName = OneTakeKit;
+		};
+		D5F70DE62F63B58C00038336 /* OneTakeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F70D532F63AB3700038336 /* XCLocalSwiftPackageReference "OneTakeKit" */;
+			productName = OneTakeKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D5F70D0D2F63AA8100038336 /* Project object */;
+}
