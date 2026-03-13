@@ -65,7 +65,7 @@ struct StartView: View {
                 if let error = viewModel.error {
                     Text(error)
                         .font(.caption2)
-                        .foregroundStyle(.oneTakeRed)
+                        .foregroundStyle(Color.oneTakeRed)
                         .multilineTextAlignment(.center)
                 }
             }
