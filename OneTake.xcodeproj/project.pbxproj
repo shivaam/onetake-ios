@@ -120,6 +120,13 @@
 			);
 			target = D5F70D5A2F63AD0A00038336 /* OneTakeWatch */;
 		};
+		D5F70DEB2F63CBA800038336 /* Exceptions for "OneTakeWatch Watch App" folder in "OneTakeWatch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Supabase.plist,
+			);
+			target = D5F70D5A2F63AD0A00038336 /* OneTakeWatch */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -159,6 +166,9 @@
 		};
 		D5F70D812F63AD0B00038336 /* OneTakeWatch Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D5F70DEB2F63CBA800038336 /* Exceptions for "OneTakeWatch Watch App" folder in "OneTakeWatch" target */,
+			);
 			path = "OneTakeWatch Watch App";
 			sourceTree = "<group>";
 		};
@@ -370,12 +380,8 @@
 			dependencies = (
 				D5F70D802F63AD0B00038336 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				D5F70D5C2F63AD0A00038336 /* OneTakeWatch */,
-			);
 			name = OneTakeWatch;
 			packageProductDependencies = (
-				D5F70DE42F63B56000038336 /* OneTakeKit */,
 			);
 			productName = OneTakeWatch;
 			productReference = D5F70D5B2F63AD0A00038336 /* OneTakeWatch.app */;

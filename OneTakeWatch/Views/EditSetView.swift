@@ -74,8 +74,10 @@ struct EditSetView: View {
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .monospacedDigit()
+                                #if os(watchOS)
                                 .focusable()
                                 .digitalCrownRotation(weight, from: 0, through: 999, by: 2.5, sensitivity: .medium)
+                                #endif
                         }
                     }
 
@@ -95,8 +97,10 @@ struct EditSetView: View {
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .monospacedDigit()
+                                #if os(watchOS)
                                 .focusable()
                                 .digitalCrownRotation(reps, from: 0, through: 999, by: 1, sensitivity: .medium)
+                                #endif
                         }
                     }
                 }
